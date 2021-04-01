@@ -1,13 +1,127 @@
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+}
+
+html {
+  box-sizing: border-box;
+  /* A system font stack so things load nice and quick! */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--black);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: dimgray; */
+  background: linear-gradient(100deg, #40999f, #577590, #3e5559) fixed;
+  color: whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.btn {
+  background-color: whitesmoke;
+  margin: 3px;
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: #3f6a6f;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #3f6a6f;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+}
+
+.form-parent {
+  display: grid;
+  grid-template-columns: repeat(auto 1fr);
+  grid-gap: 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+input[type='text'] {
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  height: 30px;
+  font-weight: bold;
+  color: #40989e;
+  text-align: center;
+  margin-left: 10px;
+  font-size: 15px;
+}
+input[type='password'] {
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  height: 30px;
+  color: #40989e;
+  text-align: center;
+}
+
+input[type='number'] {
+  border: 1px solid var(--black);
+  border-radius: 3px;
+  height: 30px;
+  font-weight: bold;
+  color: #40989e;
+  text-align: center;
+  margin-left: 10px;
+}
+
+select {
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  margin-left: 10px;
+  color: #40989e;
+  font-weight: bold;
+}
+
+.PwdLength {
+  text-align: center;
+}
+
+.crackTime {
+  color: var(--black);
+}
+
+.error {
+  color: tomato;
+  font-size: small;
+  font-style: italic;
+  text-align: center;
 }
