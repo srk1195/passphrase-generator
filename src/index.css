@@ -37,6 +37,12 @@ body {
   text-align: center;
 }
 
+.app > h3 {
+  font-style: italic;
+  text-transform: capitalize;
+  color: var(--yellow);
+}
+
 .btn {
   background-color: whitesmoke;
   margin: 3px;

@@ -57,6 +57,25 @@ function PassForm() {
         alert(`Copied the Password`);
     };
 
+    const toggleCopyButton = () => {
+        if (values.pwdLen > 0) {
+            if (values.fieldType === 'text') {
+                return (
+                    <button className="btn" type="button" onClick={handleShow} value="password">
+                        Hide
+                    </button>
+                );
+            }
+
+            // Default Text Field!
+            return (
+                <button className="btn" type="button" onClick={handleShow} value="text">
+                    Show
+                </button>
+            );
+        }
+    };
+
     return (
         <div>
             <div className="PwdLength">
@@ -82,18 +101,9 @@ function PassForm() {
                                 onChange={handleChange}
                                 size="70"
                             />
-                            {values.fieldType === 'text' ? (
-                                <button className="btn" type="button" onClick={handleShow} value="password">
-                                    Hide
-                                </button>
-                            ) : (
-                                <button className="btn" type="button" onClick={handleShow} value="text">
-                                    Show
-                                </button>
-                            )}
+                            {toggleCopyButton()}
                             {values.pwdLen > 0 && (
                                 <button className="btn" type="button" onClick={handleCopy}>
-                                    {' '}
                                     Copy
                                 </button>
                             )}
@@ -123,7 +133,7 @@ function PassForm() {
                                 type="Number"
                                 id="minLength"
                                 name="minLength"
-                                value={values.minLength || 5}
+                                value={values.minLength}
                                 onChange={handleChange}
                                 max={100}
                             />
