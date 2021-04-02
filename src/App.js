@@ -3,8 +3,8 @@ import PassForm from './PassForm';
 
 function App() {
     return (
-        <div className="container">
-            <h1>Welcome to Pass Phrase Generator!</h1>
+        <div className="app">
+            <h2>Welcome to Pass Phrase Generator!</h2>
 
             <PassForm />
         </div>

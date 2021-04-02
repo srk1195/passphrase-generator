@@ -147,6 +147,7 @@ function PassForm() {
                                 value={values.specialChars}
                                 onChange={handleChange}
                                 minLength="1"
+                                className="specialCharsInput"
                             />
                             {values.specialChars.length === 0 && (
                                 <>
@@ -198,10 +199,11 @@ function PassForm() {
                             />
                         </label>
                     </div>
-
-                    <button className="btn" type="submit" onClick={handleSubmit}>
-                        Generate
-                    </button>
+                    <div className="btn-submit">
+                        <button className="btn " type="submit" onClick={handleSubmit}>
+                            Generate
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

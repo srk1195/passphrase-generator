@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-const zxcvbn = require('zxcvbn');
+const hsimp = require('hsimp');
 const Words = require('./words/wordsCapitalized.json');
 
 // Takes an array and returns an random element from it!
@@ -74,11 +74,12 @@ const getMePassPhrase = (values) => {
     if (replace) {
         generatedPassword = letterReplacer(generatedPassword);
     }
+    console.log();
 
     return {
         pwd: generatedPassword,
         len: generatedPassword.length,
-        crackTime: zxcvbn(generatedPassword).crack_times_display.online_throttling_100_per_hour,
+        crackTime: hsimp(generatedPassword).time,
     };
 };
 

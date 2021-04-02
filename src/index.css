@@ -9,10 +9,11 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-weight: 900;
-  font-size: 15px;
+  font-size: 30px;
   color: var(--black);
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  text-shadow: 0px 2px 0 rgba(165, 19, 19, 0.07);
 }
+
 /*
   WAT IS THIS?!
   We inherit box-sizing: border-box; from our <html> selector
@@ -28,49 +29,39 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: dimgray; */
   background: linear-gradient(100deg, #40999f, #577590, #3e5559) fixed;
   color: whitesmoke;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  text-align: center;
 }
 
 .btn {
   background-color: whitesmoke;
   margin: 3px;
   border: 1px solid whitesmoke;
-  border-radius: 3px;
+  border-radius: 5px;
   padding-top: 4px;
   padding-bottom: 4px;
-  color: #3f6a6f;
+  color: #498b99;
   font-weight: 500;
 }
 
 .btn:hover {
-  background-color: #3f6a6f;
+  background-color: #498b99;
   color: whitesmoke;
   font-weight: 700;
+  border: 1px solid #498b99;
 }
 
 /* GRID */
-.container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  border: 5px solid rgba(0, 0, 0, 0.03);
-  border-radius: 3px;
-  font-size: 35px;
-}
 
 .form-parent {
   display: grid;
-  grid-template-columns: repeat(auto 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 20px;
-  align-items: center;
-  justify-items: center;
+  place-items: center;
 }
 
 input[type='text'] {
@@ -89,10 +80,12 @@ input[type='password'] {
   height: 30px;
   color: #40989e;
   text-align: center;
+  margin-left: 10px;
+  font-size: 15px;
 }
 
 input[type='number'] {
-  border: 1px solid var(--black);
+  border: 1px solid whitesmoke;
   border-radius: 3px;
   height: 30px;
   font-weight: bold;
@@ -124,4 +117,61 @@ select {
   font-size: small;
   font-style: italic;
   text-align: center;
+}
+
+/* MEDIA Queries! */
+/* For mobile devices! */
+@media screen and (width: 360px),
+  (width: 375px),
+  (width: 414px) and (min-height: 667px) {
+  html {
+    font-size: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+    color: var(--yellow);
+    text-shadow: 0px 2px 0 rgba(165, 19, 19, 0.07);
+  }
+  .form-parent {
+    place-items: start;
+    margin-left: 20px;
+  }
+
+  input[type='text'] {
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    width: 200px;
+    height: 30px;
+    font-weight: bold;
+    color: #40989e;
+    text-align: center;
+    margin-left: inherit;
+    font-size: 10px;
+  }
+  input[type='password'] {
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    height: 30px;
+    width: 200px;
+    color: #40989e;
+    text-align: center;
+    margin-left: inherit;
+    font-size: 10px;
+  }
+
+  input[name='specialChars'] {
+    height: 20px;
+    width: 100px;
+    font-size: 10px;
+    margin-left: 10px;
+    border: 1px solid whitesmoke;
+  }
+  .btn {
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+  }
+
+  .btn-submit {
+    place-self: center;
+  }
 }
