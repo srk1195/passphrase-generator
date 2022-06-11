@@ -3,16 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
     "hsimp": "^1.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "4.0.3"
   },
   "scripts": {
+    "css": "postcss ./src/styles/tailwind.css -o ./src/styles/tailwind.generated.css",
+    "prestart": "npm run css",
+    "prebuild": "cross-env NODE_ENV=production npm run css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -20,8 +19,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -37,7 +35,9 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -48,6 +48,8 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^3.1.2"
   }
 }

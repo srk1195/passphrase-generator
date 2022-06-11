@@ -1,19 +1,3 @@
-:root {
-  --yellow: #ffc600;
-  --black: #272727;
-}
-
-html {
-  box-sizing: border-box;
-  /* A system font stack so things load nice and quick! */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-weight: 900;
-  font-size: 30px;
-  color: var(--black);
-  text-shadow: 0px 2px 0 rgba(165, 19, 19, 0.07);
-}
-
 /*
   WAT IS THIS?!
   We inherit box-sizing: border-box; from our <html> selector
@@ -29,10 +13,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(100deg, #40999f, #577590, #3e5559) fixed;
+  /* background: linear-gradient(100deg, #40999f, #577590, #3e5559) fixed; */
   color: whitesmoke;
 }
-
 .app {
   text-align: center;
 }
